@@ -1,8 +1,12 @@
+// packages
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const questions = require("./lib/questions");
-const engineerData = require("./lib/Engineer");
+// import questions and classes
+const questions = require("./utils/questions");
+const Engineer = require("./lib/Engineer");
+const Manager = require('./lib/Manager')
+const Intern = require('./lib/Intern')
 
 function generateFile(fileName) {
   inquirer.prompt(questions).then((answers) => {
@@ -10,5 +14,5 @@ function generateFile(fileName) {
   })
 }
 // (Function init() {
-generateFile("./dist/index.html");
+// generateFile("./dist/index.html");
 // })();
