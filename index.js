@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 // import questions and classes
+const generateHTML = require('./src/generateHTML')
 const questions = require("./utils/questions");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
@@ -10,7 +11,10 @@ const Intern = require("./lib/Intern");
 
 let teamArray = [];
 
-function generateFile(fileName) {
+function generateFile() {
+  const htmlContent = generateHTML.generateHTML(JSON.stringify(teamArray));
+  // console.log('-console log- from generatedFile: ' + JSON.stringify(teamArray));
+  console.log(htmlContent);
   // passing teamArray
   //     fs.writeFile(fileName);
   //   });
@@ -21,7 +25,7 @@ function createTeam() {
   inquirer
     .prompt(questions.employeeOptions)
     .then((answers) => {
-      console.log(answers.selections);
+      console.log('-Console log- user selection: ' + answers.selections);
       switch (answers.selections) {
         case "Engineer":
           createEngineer();
@@ -30,7 +34,13 @@ function createTeam() {
           createIntern();
           break;
         case "Done":
-          confirm();
+          console.log('-Console log- teamArray: ' + JSON.stringify(teamArray));
+          teamArray.length <= 5 ? confirm() : generateFile();
+                //  if (teamArray.length <= 6) {confirm();
+              // } else {
+                // generateFile();
+              // }
+          
           break;
 
         default:
@@ -53,7 +63,7 @@ function createManager() {
       answers.officeNumber
     );
     // push to teamArray
-    teamArray.concat(manager);
+    teamArray.push(manager);
     createTeam();
   });
 }
@@ -66,7 +76,7 @@ function createEngineer() {
       answers.email,
       answers.github
     );
-    teamArray.concat(engineer);
+    teamArray.push(engineer);
     createTeam();
   });
 }
@@ -79,7 +89,7 @@ function createIntern() {
       answers.email,
       answers.school
     );
-    teamArray.concat(engineer);
+    teamArray.push(engineer);
     createTeam();
   });
 }
@@ -89,11 +99,9 @@ function confirm() {
     .prompt(questions.confirm)
     .then((answer) => {
       answer.confirm === false ? createTeam() : generateFile();
-      // if (answer === false) {
-        
-      // }
     });
 }
+
 function menu() {
   createManager();
   // createTeam();
