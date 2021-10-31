@@ -15,6 +15,7 @@ Requires :
 - npm 
    - `inquirer`
    - `jest`
+   
 Fork and download the project
 
 Open terminal or git bash and once you have navigated to the project folder run the following command:
