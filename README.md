@@ -6,7 +6,6 @@ Build your teams profiles quickly from the command line
 - [Installation Instructions](#installation-instructions)
 - [Usage](#usage)
 - [Test Instructions](#test-instructions)
-- [Contributing](#contribution-guidlines)
 - [Questions](#questions)
 
 
