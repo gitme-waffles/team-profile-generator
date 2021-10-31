@@ -31,7 +31,7 @@ Once the modules are installed, run the following command in the next line:
 node index.js
 ```  
 
-![walkthrough gif](https://user-images.githubusercontent.com/85494162/139574301-43ffdce1-dcf6-4e65-93ba-db756dc239b4.mp4)
+![walkthrough gif](https://user-images.githubusercontent.com/85494162/139574301-43ffdce1-dcf6-4e65-93ba-db756dc239b4.gif)
 
 
 ## Test Instructions
