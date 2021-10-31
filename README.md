@@ -29,9 +29,11 @@ npm install
 Once the modules are installed, run the following command in the next line:
 ```
 node index.js
-```
+```  
 
-  
+![walkthrough gif](https://user-images.githubusercontent.com/85494162/139574301-43ffdce1-dcf6-4e65-93ba-db756dc239b4.mp4)
+
+
 ## Test Instructions
 Run the following command in the command line to run the tests:
 
@@ -39,8 +41,8 @@ Run the following command in the command line to run the tests:
 npm test
 ```
 
+![team-prof-gen-tests](https://user-images.githubusercontent.com/85494162/139574366-c6691886-23b5-45f3-aec7-25cafcb1639c.png)
 
-## Contribution Guidlines
 
 ## Questions
 Contact me on [Github](https://github.com/gitme-waffles) or via [email]() ifyou have any questions 
