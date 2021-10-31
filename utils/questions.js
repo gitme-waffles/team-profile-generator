@@ -2,7 +2,7 @@ const manager = [
   {
     type: "input",
     name: "name",
-    message: "What is your name?",
+    message: "What is the manager's name?",
   },
   {
     type: "input",
@@ -12,12 +12,12 @@ const manager = [
   {
     type: "input",
     name: "email",
-    message: "What is your email?",
+    message: "What is their email?",
   },
   {
     type: "input",
     name: "officeNumber",
-    message: "What is your office number?",
+    message: "What is their office number?",
   },
 ];
 
@@ -25,7 +25,7 @@ const engineer = [
   {
     type: "input",
     name: "name",
-    message: "What is your name?",
+    message: "What is the engineer's name?",
   },
   {
     type: "input",
@@ -35,12 +35,12 @@ const engineer = [
   {
     type: "input",
     name: "email",
-    message: "What is your email?",
+    message: "What is their email?",
   },
   {
     type: "input",
     name: "github",
-    message: "What is your Github username?",
+    message: "What is their Github username?",
   },
 ];
 
@@ -48,7 +48,7 @@ const intern = [
   {
     type: "input",
     name: "name",
-    message: "What is your name?",
+    message: "What is the intern's name?",
   },
   {
     type: "input",
@@ -58,12 +58,12 @@ const intern = [
   {
     type: "input",
     name: "email",
-    message: "What is your email?",
+    message: "What is their email?",
   },
   {
     type: "input",
     name: "school",
-    message: "What Educational Institute did you attend?",
+    message: "What Educational Institute did they attend?",
   },
 ];
 
