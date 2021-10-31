@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 // import questions and classes
-const generateHTML = require('./src/generateHTML')
+const generateHTML = require("./src/generateHTML");
 const questions = require("./utils/questions");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
@@ -11,47 +11,35 @@ const Intern = require("./lib/Intern");
 
 let teamArray = [];
 
+
 function generateFile() {
-  const htmlContent = generateHTML.generateHTML(JSON.stringify(teamArray));
-  // console.log('-console log- from generatedFile: ' + JSON.stringify(teamArray));
-  console.log(htmlContent);
-  // passing teamArray
-  //     fs.writeFile(fileName);
-  //   });
+  const htmlContent = generateHTML.generateHTML(teamArray);
+  const fileName = './dist/index.html'
+  fs.writeFile(fileName, htmlContent, (err) => {
+    err ? console.log(err) : console.log("File created! \n-Check dist/ folder-");
+  });
 }
 
 function createTeam() {
-  // inquirer.prompt => selections E I Done
-  inquirer
-    .prompt(questions.employeeOptions)
-    .then((answers) => {
-      console.log('-Console log- user selection: ' + answers.selections);
-      switch (answers.selections) {
-        case "Engineer":
-          createEngineer();
-          break;
-        case "Intern":
-          createIntern();
-          break;
-        case "Done":
-          console.log('-Console log- teamArray: ' + JSON.stringify(teamArray));
-          teamArray.length <= 5 ? confirm() : generateFile();
-                //  if (teamArray.length <= 6) {confirm();
-              // } else {
-                // generateFile();
-              // }
-          
-          break;
+  inquirer.prompt(questions.employeeOptions).then((answers) => {
+    answers.selections === "Done" ? console.log(answers.selections + "!") : console.log("Add an " + answers.selections);
+    switch (answers.selections) {
+      case "Engineer":
+        console.log("Add an " + answers.selections);
+        createEngineer();
+        break;
+      case "Intern":
+        console.log("Add an " + answers.selections);
+        createIntern();
+        break;
+      case "Done":
+        teamArray.length <= 5 ? confirm() : generateFile();
+        break;
 
-        default:
-          break;
-      }
-    });
-  // .then -> answers
-  // switch
-  // -> E call engineer function
-  // -> I call intern function
-  // Done -> creatTeam
+      default:
+        break;
+    }
+  });
 }
 
 function createManager() {
@@ -62,7 +50,6 @@ function createManager() {
       answers.email,
       answers.officeNumber
     );
-    // push to teamArray
     teamArray.push(manager);
     createTeam();
   });
@@ -95,25 +82,16 @@ function createIntern() {
 }
 
 function confirm() {
-  inquirer
-    .prompt(questions.confirm)
-    .then((answer) => {
-      answer.confirm === false ? createTeam() : generateFile();
-    });
+  inquirer.prompt(questions.confirm).then((answer) => {
+    answer.confirm === false ? createTeam() : generateFile();
+  });
 }
 
 function menu() {
+  console.log('Assign the team Manager');
   createManager();
-  // createTeam();
-  // inquirer.prompt();
 }
 
-// generateFile("./dist/index.html");
 (function init() {
   menu();
 })();
-
-// filter interns and eniginner from array [filter syntax]
-// take out engineer into seperate engineer array -> pass
-// take out intern into seperate intern array -> pass
-// concat each card to same html file
