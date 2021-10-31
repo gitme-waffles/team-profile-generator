@@ -22,7 +22,7 @@ function generateFile() {
 
 function createTeam() {
   inquirer.prompt(questions.employeeOptions).then((answers) => {
-    answers.selections === "Done" ? console.log(answers.selections + "!") : console.log("Add an " + answers.selections);
+    // answers.selections === "Done" ? console.log(answers.selections + "!") : console.log("Add an " + answers.selections);
     switch (answers.selections) {
       case "Engineer":
         console.log("Add an " + answers.selections);

@@ -3,7 +3,6 @@
 
 
 function renderManager(managerArray) {
-  console.log('-CONSOLE LOG- renderManager: ' + JSON.stringify(managerArray));
   let managerCard = "";
   
   managerArray.forEach(manager => {
