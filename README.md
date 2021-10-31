@@ -43,5 +43,5 @@ npm test
 
 
 ## Questions
-Contact me on [Github](https://github.com/gitme-waffles) or via [email]() ifyou have any questions 
+Contact me on [Github](https://github.com/gitme-waffles) if you have any questions 
  
