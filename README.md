@@ -16,8 +16,9 @@ Requires :
 - npm 
    - `inquirer`
    - `jest`
+Fork and download the project
 
-Open terminal or git bash and run the following command:
+Open terminal or git bash and once you have navigated to the project folder run the following command:
 
 ```
 npm install
@@ -32,6 +33,12 @@ node index.js
 
   
 ## Test Instructions
+Run the following command in the command line to run the tests:
+
+```
+npm test
+```
+
 
 ## Contribution Guidlines
 
