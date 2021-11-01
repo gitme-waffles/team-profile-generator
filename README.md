@@ -30,7 +30,7 @@ Once the modules are installed, run the following command in the next line:
 ```
 node index.js
 ```  
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/85494162/139574461-f09c0e9a-90ab-46ea-8369-50403176045c.gif)
+//![ezgif com-gif-maker](https://user-images.githubusercontent.com/85494162/139574461-f09c0e9a-90ab-46ea-8369-50403176045c.gif)
 
 
 
